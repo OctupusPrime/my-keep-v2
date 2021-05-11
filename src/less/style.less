@@ -1,0 +1,1563 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, ul, li, p, div, a, textarea {
+	margin: 0;
+	padding: 0;
+	font-weight: 600;
+	font-family: 'Work Sans', sans-serif;
+	font-size: 13px;
+	color: #000;
+	text-decoration: none;
+	list-style: none;
+}
+a {
+	cursor: pointer;
+}
+span{
+    cursor: pointer;
+}
+.myKeep{
+	height: 100%;
+	width: 100%;
+	padding-top: 64px;
+	box-sizing: border-box;
+	.oveflow{
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #ECF0F1;
+	}
+	.topBar{
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 64px;
+		background-color: #ECF0F1;
+		z-index: 7;
+		.mobMenu{
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 10;
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.3s ease;
+			.overlay{
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background-color: rgba(0, 0, 0, 0.4);
+				opacity: 0;
+				visibility: hidden;
+				transition: all 0.3s ease;
+			}
+			.mobMenuRouts{
+				position: absolute;
+				top: 64px;
+				display: inline-block;
+				background-color: #fff;
+				border: 2px solid;
+				border-color: #fff;
+				border-left: none;
+				border-bottom-right-radius: 5px;
+				border-top-right-radius: 5px;
+				padding: 20px 22px;
+				box-sizing: border-box;
+				transition: all 0.3s ease;
+				.menuRouter{
+					display: inline-block;
+					.item{
+						a{
+							display: inline-block;
+							margin: 21.5px;
+							font-size: 18px;
+							position: relative;
+							user-select: none;
+							cursor: pointer;
+							color: #5f5f5f;
+							transition: all 0.3s ease;
+							&::before{
+								content: '';
+								height: 2px;
+								width: 0;
+								background-color: #000;
+								user-select: none;
+								position: absolute;
+								bottom: -2px;
+								left: 0;
+								transition: all 0.3s ease;
+							}
+							&:hover{
+								color: #000;
+								&::before{
+									width: 50%;	
+								}	
+							}
+						}
+						&.active{
+							a{
+								color: #000;
+								&::before{
+									width: 75%;	
+								}	
+							}
+						}
+					}
+				}
+				.bottomBtn{
+					padding-top: 15px;
+					.cansel{
+						color: #2e5cb8;
+						font-size: 16px;
+						float: right;
+						user-select: none;
+						cursor: pointer;
+						position: relative;
+						&::before{
+							content: '';
+							height: 2px;
+							width: 0;
+							background-color: #2e5cb8;
+							user-select: none;
+							position: absolute;
+							bottom: -2px;
+							left: 0;
+							transition: all 0.3s ease;
+						}
+						&:hover{
+							&::before{
+								width: 50%;	
+							}	
+						}
+					}
+				}
+			}
+			&.active{
+				opacity: 1;
+				visibility: visible;
+				.overlay{
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+		.wrapper{
+			max-width: 1400px;
+			width: 100%;
+			margin: 0 auto;
+			position: relative;
+			.logo{
+				display: inline-block;
+				height: 64px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-color: #fff;
+				border-bottom-right-radius: 5px;
+				border-bottom-left-radius: 5px;
+				cursor: pointer;
+				> h1{
+					margin: 17px 15px;
+					font-size: 26px;
+					font-weight: 700;
+					color: #000;
+					user-select: none;
+				}
+			}
+			.mobBtn{
+				display: none;
+				width: 35px;
+				height: 35px;
+				position: absolute;
+				left: 15px;
+				top: 14.5px;
+				cursor: pointer;
+				
+				background-image: url(\../img/mobMenu.svg);
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: 22px;
+			}
+			.menuRouter{
+				display: inline-block;
+				position: absolute;
+				height: 64px;
+				left: 50%;
+				transform: translate(-50%, 0);
+				user-select: none;
+				.item{
+					display: inline-block;
+					a{
+						display: inline-block;
+						margin: 21.5px;
+						font-size: 18px;
+						position: relative;
+						user-select: none;
+						cursor: pointer;
+						color: #5f5f5f;
+						&::before{
+							content: '';
+							height: 2px;
+							width: 0;
+							background-color: #000;
+							user-select: none;
+							position: absolute;
+							bottom: -2px;
+							left: 0;
+							transition: all 0.3s ease;
+						}
+						&:hover{
+							color: #000;
+							&::before{
+								width: 50%;	
+							}	
+						}
+					}
+					&.active{
+						a{
+							color: #000;
+							&::before{
+								width: 75%;	
+							}	
+						}
+					}
+				}
+			}
+			.settingsBtn{
+				display: inline-block;
+				width: 35px;
+				height: 35px;
+				position: absolute;
+				right: 15px;
+				top: 14.5px;
+				cursor: pointer;
+				
+				background-image: url(\../img/settings.svg);
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: 22px;
+		
+			}
+		}
+		&.active{
+			box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2);
+		}
+	}
+	
+	.settings{
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 10;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.3s ease;
+		.overlay{
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: rgba(0, 0, 0, 0.4);
+			opacity: 0;
+			visibility: hidden;
+			transition: all 0.3s ease;
+		}
+		.mainSet{
+			position: absolute;
+			top: 64px;
+			display: inline-block;
+			background-color: #fff;
+			border: 2px solid;
+			border-color: #fff;
+			border-right: none;
+			border-bottom-left-radius: 5px;
+			border-top-left-radius: 5px;
+			padding: 20px 22px;
+			box-sizing: border-box;
+			transition: all 0.3s ease;
+			> h1{
+				color: #2e5cb8;	
+				font-size: 21px;
+			}
+			.menu{
+				display: inline-block;
+				padding-top: 5px;
+				.item{			
+					p{
+						margin-top: 30px;
+						font-size: 16px;
+						float: left;
+						padding-right: 15px;
+						transition: all 0.3s ease;
+					}
+					.switch{
+						float: right;
+						height: 18px;
+						width: 26px;
+						background-color: #000;
+						border-radius: 50px;
+						cursor: pointer;
+						position: relative;
+						margin-top: 30px;
+						transition: all 0.3s ease;
+						.dot{
+							position: absolute;
+							top: 2px;
+							left: 2px;
+							width: 14px;
+							height: 14px;
+							border-radius: 50px;
+							background-color: #fff;
+							transition: all 0.2s ease;
+						}
+						&.active{
+							.dot{
+								left: 10px;
+							}
+						}
+					}
+				}
+			}
+			.bottomBtn{
+				padding-top: 30px;
+				.cansel{
+					color: #2e5cb8;
+					font-size: 16px;
+					float: right;
+					user-select: none;
+					cursor: pointer;
+					position: relative;
+					&::before{
+						content: '';
+						height: 2px;
+						width: 0;
+						background-color: #2e5cb8;
+						user-select: none;
+						position: absolute;
+						bottom: -2px;
+						left: 0;
+						transition: all 0.3s ease;
+					}
+					&:hover{
+						&::before{
+							width: 50%;	
+						}	
+					}
+				}
+			}
+		}
+		&.active{
+			opacity: 1;
+			visibility: visible;
+			.overlay{
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+	.load{
+		display: inline-block;
+		position: fixed;
+		left: 50%;
+		top: 100px;
+		
+		transform: translate(-50%, 0);
+		opacity: 0;
+		visibility: hidden;
+		.dot{
+			display: block;
+			width: 20px;
+			height: 20px;
+	
+			background-color: #000;
+			border-radius: 50%;
+			
+			transition: all 1s ease;
+			animation-duration: 1s;
+			animation-name: spiner;
+			animation-iteration-count: infinite;
+			@keyframes spiner{
+				from{
+					transform: translateY(0);
+				}
+				50%{
+					transform: translateY(35px);		
+				}
+				to{
+					transform: translateY(0);	
+				}
+			}
+		}
+		
+		&.active{
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+	.home{
+		position: relative;
+		width: 100%;
+		opacity: 1;
+		visibility: visible;
+		.cont{
+			width: 100%;
+			.clearBtn{
+				position: absolute;
+				left: 50%;
+				top: 15px;
+				transform: translate(-50%, 0);
+				user-select: none;
+				font-size: 18px;
+				color: #2e5cb8;
+				cursor: pointer;
+				z-index: 7;
+				opacity: 0;
+				visibility: hidden;
+				&.active{
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+			.backGroundClear{
+				position: absolute;
+				top: 15px;
+				left: 50%;
+				transform: translate(-50%, 0);
+				display: inline-block;
+				opacity: 0;
+				visibility: hidden;
+				.img{
+					width: 100%;
+					height: 80px;
+
+					background-image: url(\../img/trash.svg);
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: 65px;
+				}
+				> p{
+					margin-top: 15px;
+					color: #000;
+					font-size: 20px;
+				}
+				&.active{
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+			.addBlock{
+				display: inline-block;
+				position: absolute;
+				left: 50%;
+				top: 15px;
+				max-width: 600px;
+				width: 90%;
+				transform: translate(-50%, 0);
+				border-radius: 5px;
+				z-index: 2;
+				border: 2px solid;
+				transition: all 0.4s ease;  
+				.mainTxt{
+					width: 100%;
+					box-sizing: border-box;
+					resize: none; 
+					border: none;
+					outline: none;
+					background-color: transparent;
+					overflow: hidden;
+					padding: 16px;
+					padding-bottom: 0;
+					margin-bottom: 40px;
+					transition: color 0.4s ease;
+				}
+				.palette{
+					display: block;
+					position: absolute;
+					left: 8px;
+					bottom: 5px;
+					.paletteBtn{
+						width: 30px;
+						height: 30px;
+						cursor: pointer;
+						border-radius: 50px;	
+						background-image: url(\../img/palette.svg);
+						background-position: center;
+						background-repeat: no-repeat;
+						background-size: 16px;
+		
+						transition: all 0.4s ease;  
+						&::before{
+							content: 'Change color';
+							white-space: nowrap;
+							display: inline-block;
+							position: absolute;
+							left: 50%;
+							bottom: -23px;
+							transform: translate(-50%, 0);
+							background-color: #000;
+							color: #fff;
+							padding: 3px 6px;
+							border-radius: 5px;
+							transition: all 0.3s ease;
+							visibility: hidden;
+							opacity: 0;
+						}  	
+					}
+					.items{
+						width: 210px;
+						display: flex;
+						flex-direction: row;
+						flex-wrap: wrap;
+						position: absolute;
+						padding-left: -5px;
+						bottom: 31px;
+						left: 0;
+						border-radius: 3px;
+						background-color: #fff;
+						box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
+						visibility: hidden;
+						opacity: 0;
+						transition: all 0.4s ease;   
+						.color{
+							position: relative;
+							height: 25px;
+							width: 11.9%;
+							margin: 5px 5px;
+							border-radius: 50%;
+							border: 1px solid;
+							box-sizing: border-box;
+							cursor: pointer;
+							&::before{
+								content: attr(data-title);
+								display: inline-block;
+								white-space: nowrap;
+								position: absolute;
+								left: 50%;
+								bottom: -22px;
+								transform: translate(-50%, 0);
+								background-color: #000;
+								color: #fff;
+								padding: 3px 6px;
+								border-radius: 5px;
+								transition: all 0.3s ease;
+								visibility: hidden;
+								opacity: 0;
+								z-index: 2;
+							}
+							&.active{
+								background-image: url(\../img/checkBlack.svg);
+								background-position: center;
+								background-repeat: no-repeat;
+								background-size: 14px;
+							}
+							&:hover{
+								border-color: #000;
+								&::before{
+									visibility: visible;
+									opacity: 1;
+								}
+							}
+						}
+					} 
+				}
+				.addBtn{
+					display: inline-block;
+					height: 30px;
+					cursor: pointer;
+					border-radius: 15px;
+					position: absolute;
+					right: 8px;
+					bottom: 5px;
+					transition: all 0.4s ease; 
+					> p{
+						display: inline-block;
+						font-size: 15px;
+						margin: 7px 6px 4px 0;
+						user-select: none;
+					}
+					.plus{
+						float: left;
+						width: 25px;
+						height: 30px;
+		
+						background-image: url(\../img/plus.svg);
+						background-position: center;
+						background-repeat: no-repeat;
+						background-size: 11px;
+					} 
+				}
+				&.hover{
+					.palette{
+						.paletteBtn{
+							&:hover{
+								background-color: rgba(95,99,104,0.157);
+								&::before{
+									visibility: visible;
+									opacity: 1;
+								}
+							}	
+						}
+						&:hover{
+							.items{
+								opacity: 1;
+								visibility: visible;
+							}
+						}
+					}
+					.addBtn{
+						&:hover{
+							background-color: rgba(95,99,104,0.157);
+						}
+					}
+				}
+			}
+			.modalContainer{
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				z-index: 10;
+				opacity: 0;
+				visibility: hidden;
+				transition: all 0.3s ease;
+				.overlay{
+					position: fixed;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					background-color: rgba(0, 0, 0, 0.4);
+				}
+				.modal{
+					display: inline-block;
+					position: absolute;
+					top: 10%;
+					left: 50%;
+					transform: translate(-50%, 0);
+					background-color: #fff;
+					border-radius: 5px;
+					border: 2px solid;
+					border-color: #fff;
+					> p{
+						display: inline-block;
+						white-space: nowrap;
+						padding: 20px 20px;
+						margin-bottom: 20px;
+					}
+					.cansel{
+						position: absolute;
+						left: 20px;
+						bottom: 12px;
+						user-select: none;
+						cursor: pointer;
+					}
+					.init{
+						position: absolute;
+						right: 20px;
+						bottom: 12px;
+						user-select: none;
+						cursor: pointer;
+						color: #2e5cb8;
+					}
+				}
+				&.active{
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+			.popUp{
+				position: fixed;
+				left: 15px;
+				display: inline-block;
+				z-index: 8;
+				background-color: #313235;
+				border-radius: 5px;
+				transition: all 0.3s ease;
+				.popUpCont{
+					display: inline-block;
+					margin: 10px 20px;
+					margin-right: 5px;
+					.txt{
+						float: left;
+						margin-top: 4px;
+						color: #fff;
+						font-size: 14px;
+					}
+					.canselBtn{
+						float: right;
+						color: #ffbb00;
+						margin: 0 15px;
+						margin-right: 8px;
+						margin-top: 2px;
+						font-size: 16px;
+						user-select: none;
+						cursor: pointer;
+						transition: all 0.3s ease;
+						opacity: 0;
+						visibility: hidden;
+						&.active{
+							opacity: 1;
+							visibility: visible;
+						}
+					}
+				}
+				.closeBtn{
+					float: right;
+					width: 18px;
+					height: 18px;
+		
+					background-image: url(\../img/plusWhite.svg);
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: 13px;
+					margin-top: 12px;
+					margin-right: 13px;
+					border-radius: 50%;
+		
+					transform: rotate(45deg);
+					cursor: pointer;
+				}
+			}
+			.main{
+				margin: 0 auto;
+				position: relative;
+				transition: all 0.4s ease; 
+				width: 90%;
+				.deleatedBlock{
+					width: 32.14285714%;
+					position: absolute;
+					box-sizing: border-box;
+					border: 2px solid;
+					border-radius: 5px;	
+					transition-property: height, width, left, top, box-shadow, background-color, border-color;
+					transition-duration: 0.4s;
+					transition-timing-function: ease;
+					visibility: visible;
+					z-index: 3;
+					.mainTxt{
+						width: 100%;
+						padding: 16px;
+						padding-bottom: 0;
+						margin-bottom: 40px;
+						box-sizing: border-box;
+						resize: none; 
+						border: none;
+						outline: none;
+						background-color: transparent;
+						overflow: hidden;
+					}	
+					.deleteBtn{
+						position: absolute;
+						left: 8px;
+						bottom: 5px;
+						width: 30px;
+						height: 30px;
+						cursor: pointer;
+						border-radius: 50px;	
+						background-image: url(\../img/trash.svg);
+						background-position: center;
+						background-repeat: no-repeat;
+						background-size: 13px;
+						transition: all 0.4s ease;
+						&::before{
+							content: 'Delete note';
+							white-space: nowrap;
+							display: inline-block;
+							position: absolute;
+							left: 50%;
+							bottom: -22px;
+							transform: translate(-50%, 0);
+							background-color: #000;
+							color: #fff;
+							padding: 3px 6px;
+							border-radius: 5px;
+							transition: all 0.3s ease;
+							visibility: hidden;
+							opacity: 0;
+						}
+						&:hover{
+							background-color: rgba(95,99,104,0.157);
+							&::before{
+								visibility: visible;
+								opacity: 1;
+							}
+						}	
+					}
+					.recoveryBtn{
+						position: absolute;
+						left: 48px;
+						bottom: 5px;
+
+						width: 30px;
+						height: 30px;
+						cursor: pointer;
+						border-radius: 50px;	
+						background-image: url(\../img/trash-restore.svg);
+						background-position: center;
+						background-repeat: no-repeat;
+						background-size: 13px;
+						transition: all 0.4s ease;
+						&::before{
+							content: 'Recovery';
+							white-space: nowrap;
+							display: inline-block;
+							position: absolute;
+							left: 50%;
+							bottom: -22px;
+							transform: translate(-50%, 0);
+							background-color: #000;
+							color: #fff;
+							padding: 3px 6px;
+							border-radius: 5px;
+							transition: all 0.3s ease;
+							visibility: hidden;
+							opacity: 0;
+						}
+						&:hover{
+							background-color: rgba(95,99,104,0.157);
+							&::before{
+								visibility: visible;
+								opacity: 1;
+							}
+						}	
+					}
+					&.listMode{
+						width: 100%;
+					}
+					&.hidden{
+						transition: none;
+						opacity: 0;
+						visibility: hidden;
+					}
+					&.active{
+						transition: none;
+					}
+				}
+				.block{
+					width: 32.14285714%;
+					position: absolute;
+					box-sizing: border-box;
+					border: 2px solid;
+					border-radius: 5px;	
+					transition-property: height, width, left, top, box-shadow, background-color, border-color;
+					transition-duration: 0.4s;
+					transition-timing-function: ease;
+					visibility: visible;
+					z-index: 3;
+					.mainTxt{
+						width: 100%;
+						padding: 16px;
+						padding-bottom: 0;
+						margin-bottom: 40px;
+						box-sizing: border-box;
+						resize: none; 
+						border: none;
+						outline: none;
+						background-color: transparent;
+						overflow: hidden;
+					}	
+					.moveBlock{
+						width: 35%;
+						height: 10px;
+						cursor: pointer;
+						border: 1px solid;
+						border-color: #e0e0e0;
+						border-top: none;
+						border-bottom-left-radius: 8px;
+						border-bottom-right-radius: 8px;
+		
+						background-image: url(\../img/dot.svg);
+						background-position: center;
+						background-repeat: no-repeat;
+						background-size: 7px;
+		
+						background-color: rgba(95,99,104,0.157);
+						position: absolute;
+						left: 50%;
+						top: 0;
+						transform: translate(-50%, 0);
+						transition: all 0.2s ease;  
+					}
+					.palette{
+						display: block;
+						position: absolute;
+						left: 8px;
+						bottom: 5px;
+						.paletteBtn{
+							width: 30px;
+							height: 30px;
+							cursor: pointer;
+							border-radius: 50px;	
+							background-image: url(\../img/palette.svg);
+							background-position: center;
+							background-repeat: no-repeat;
+							background-size: 16px;
+			
+							transition: all 0.4s ease;  
+							visibility: hidden;
+							opacity: 0;
+							&::before{
+								content: 'Change color';
+								white-space: nowrap;
+								display: inline-block;
+								position: absolute;
+								left: 50%;
+								bottom: -23px;
+								transform: translate(-50%, 0);
+								background-color: #000;
+								color: #fff;
+								padding: 3px 6px;
+								border-radius: 5px;
+								transition: all 0.3s ease;
+								visibility: hidden;
+								opacity: 0;
+							}  	
+						}
+						.items{
+							width: 210px;
+							display: flex;
+							flex-direction: row;
+							flex-wrap: wrap;
+							position: absolute;
+							padding-left: -5px;
+							bottom: 31px;
+							left: 0;
+							border-radius: 3px;
+							background-color: #fff;
+							box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
+							visibility: hidden;
+							opacity: 0;
+							transition: all 0.4s ease;   
+							.color{
+								position: relative;
+								height: 25px;
+								width: 11.9%;
+								margin: 5px 5px;
+								border-radius: 50%;
+								border: 1px solid;
+								box-sizing: border-box;
+								cursor: pointer;
+								&::before{
+									content: attr(data-title);
+									display: inline-block;
+									white-space: nowrap;
+									position: absolute;
+									left: 50%;
+									bottom: -22px;
+									transform: translate(-50%, 0);
+									background-color: #000;
+									color: #fff;
+									padding: 3px 6px;
+									border-radius: 5px;
+									transition: all 0.3s ease;
+									visibility: hidden;
+									opacity: 0;
+									z-index: 2;
+								}
+								&.active{
+									background-image: url(\../img/checkBlack.svg);
+									background-position: center;
+									background-repeat: no-repeat;
+									background-size: 14px;
+								}
+								&:hover{
+									border-color: #000;
+									&::before{
+										visibility: visible;
+										opacity: 1;
+									}
+								}
+							}
+						} 
+					}
+					.deleteBtn{
+						position: absolute;
+						right: 48px;
+						bottom: 5px;
+						width: 30px;
+						height: 30px;
+						cursor: pointer;
+						border-radius: 50px;	
+						background-image: url(\../img/trash.svg);
+						background-position: center;
+						background-repeat: no-repeat;
+						background-size: 13px;
+		
+						transition: all 0.4s ease;  
+						visibility: hidden;
+						opacity: 0;
+						&::before{
+							content: 'Delete note';
+							white-space: nowrap;
+							display: inline-block;
+							position: absolute;
+							left: 50%;
+							bottom: -23px;
+							transform: translate(-50%, 0);
+							background-color: #000;
+							color: #fff;
+							padding: 3px 6px;
+							border-radius: 5px;
+							transition: all 0.3s ease;
+							visibility: hidden;
+							opacity: 0;
+						} 
+					}
+					.cloneBtn{
+						position: absolute;
+						right: 8px;
+						bottom: 5px;
+						width: 30px;
+						height: 30px;
+						cursor: pointer;
+						border-radius: 50px;	
+						background-image: url(\../img/clone.svg);
+						background-position: center;
+						background-repeat: no-repeat;
+						background-size: 16px;
+		
+						transition: all 0.4s ease;  
+						visibility: hidden;
+						opacity: 0;
+						&::before{
+							content: 'Create copy';
+							white-space: nowrap;
+							display: inline-block;
+							position: absolute;
+							left: 50%;
+							bottom: -23px;
+							transform: translate(-50%, 0);
+							background-color: #000;
+							color: #fff;
+							padding: 3px 6px;
+							border-radius: 5px;
+							transition: all 0.3s ease;
+							visibility: hidden;
+							opacity: 0;
+						}  
+					}
+					&.listMode{
+						width: 100%;
+					}
+					&.active{
+						transition: none;
+					}
+					&.hidden{
+						transition: none;
+						opacity: 0;
+						visibility: hidden;
+					}
+					&.addHover{
+						.moveBlock{
+							&:hover{
+								height: 30px;
+								background-image: url(\../img/move-button.svg);
+								background-size: 25px;
+							}
+						}
+						.palette{
+							.paletteBtn{
+								&:hover{
+									background-color: rgba(95,99,104,0.157);
+									&::before{
+										visibility: visible;
+										opacity: 1;
+									}
+								}	
+							}
+							&:hover{
+								.items{
+									opacity: 1;
+									visibility: visible;
+								}
+							}
+						}
+						.deleteBtn{
+							&:hover{
+								background-color: rgba(95,99,104,0.157);
+								&::before{
+									visibility: visible;
+									opacity: 1;
+								}
+							}
+						}
+						.cloneBtn{
+							&:hover{
+								background-color: rgba(95,99,104,0.157);
+								&::before{
+									visibility: visible;
+									opacity: 1;
+								}
+							}
+						}
+						&:hover{
+							z-index: 4;
+							.menuBtn{
+								visibility: visible;
+								opacity: 1;
+							}
+							.paletteBtn{
+								visibility: visible;
+								opacity: 1;
+							}
+							.deleteBtn{
+								visibility: visible;
+								opacity: 1;
+							}
+							.cloneBtn{
+								visibility: visible;
+								opacity: 1;
+							}
+						}
+					}
+					&.clon{
+						transition: none;
+						pointer-events: none;
+						z-index: 8;
+						.mainTxt{
+							user-select: none;
+						}
+						.moveBlock{
+							transition: none;
+							height: 30px;
+							background-image: url(\../img/move-button.svg);
+							background-size: 25px;
+						}
+					}
+				}
+				.title{
+					color: #2e5cb8;
+					font-size: 28px;
+					padding-top: 15px;
+					> span{
+						color: #000;
+						font-size: 15px;
+					}
+				}
+				.about{
+					padding-top: 20px;
+					> p{
+						color: #000;
+						padding-top: 10px;
+						font-size: 16px;
+						line-height: 2;
+					}
+					> h2{
+						color: #2e5cb8;
+						font-size: 20px;
+						padding-top: 30px;
+					}
+					> ul{
+						padding-top: 10px;
+						> li{
+							color: #000;
+							margin-left: 15px;
+							margin-top: 5px;
+							font-size: 14px;
+							position: relative;
+							&::before{
+								content: '';
+								display: inline-block;
+								width: 4px;
+								height: 4px;
+								position: absolute;
+								top: 50%;
+								left: -11px;
+								transform: translate(0, -50%);
+								background-color: #2e5cb8;
+								border-radius: 50%;
+							}  
+						}
+					}
+					.btnGroup{
+						padding-top: 25px;
+						.btn{
+							background-color: #2e5cb8;
+							color: #fff;
+							padding: 10px 20px;
+							border-radius: 5px;
+							> i{
+								padding-right: 7px;
+							}
+						}
+					}
+				}
+			}
+		}
+		&.active{
+			opacity: 0;
+			visibility: hidden;
+		}
+		&.animate{
+			transition: all 1s ease;
+		}
+	}
+	&.disableScroll{
+		padding-right: 10px;
+		.topBar{
+			right: 10px;
+		}		
+	}
+	&.disableScrollMobile{
+		padding-right: -1px;
+		.topBar{
+			right: -1px;
+		}	
+	}
+	&.dark{
+		.oveflow{
+			background-color: #202124;
+		}
+		.topBar{
+			background-color: #202124;
+			.mobMenu{
+				.mobMenuRouts{
+					background-color: #000;
+					border-color: #5f6368;
+					.menuRouter{
+						.item{
+							a{
+								color: #a0a0a0;
+								&::before{
+									background-color: #fff;
+								}
+								&:hover{
+									color: #fff;
+								}
+							}
+							&.active{
+								a{
+									color: #fff;
+								}
+							}
+						}	
+					}
+				}
+			}
+			.logo{
+				background-color: #000;	
+				> h1{
+					color: #fff;
+				}	
+			}
+			.mobBtn{
+				background-image: url(\../img/mobMenuWhite.svg);
+			}
+			.menuRouter{
+				.item{
+					a{
+						color: #a0a0a0;
+						&::before{
+							background-color: #fff;
+						}
+						&:hover{
+							color: #fff;
+						}
+					}
+					&.active{
+						a{
+							color: #fff;
+						}
+					}
+				}	
+			}
+			.settingsBtn{
+				background-image: url(\../img/settingsWhite.svg);
+			}
+		}
+		.settings{
+			.mainSet{
+				background-color: #000;
+				border-color: #5f6368;
+			}
+			.menu{
+				.item{
+					p{
+						color: #fff;
+					}
+					.switch{
+						background-color: #fff;
+						.dot{
+							background-color: #000;
+						}
+					}
+				}
+			}
+		}
+		.load{
+			.dot{
+				background-color: #fff;
+			}
+		}
+		.popUp{
+			.cont{
+				.canselBtn{
+					color: #8ab4f8;
+				}
+			}
+		}
+		.home{
+			.cont{
+				.backGroundClear{
+					.img{
+						background-image: url(\../img/trashWhite.svg);
+					}
+					> p{
+						color: #fff;
+					}
+				}
+				.addBlock{
+					.mainTxt{
+						color: #fff;
+					}		
+					.palette{
+						.paletteBtn{
+							background-image: url(\../img/paletteWhite.svg);
+						}
+						.items{
+							background-color: #202124;
+							.color{
+								&.active{
+									background-image: url(\../img/check.svg);
+								}
+							}
+						}
+					}
+					.addBtn{
+						> p{
+							color: #fff;
+						}
+						.plus{
+							background-image: url(\../img/plusWhite.svg);
+						}
+					}
+					&.hover{
+						.paletteBtn{
+							&:hover{
+								background-color:rgba(154,160,166,0.157);
+							}
+						}
+						.addBtn{
+							&:hover{
+								background-color:rgba(154,160,166,0.157);
+							}
+						}
+					}
+				}
+				.modalContainer{
+					.modal{
+						background-color: #000;
+						border-color: #5f6368;
+						> p {
+							color: #fff;
+						}
+						.cansel{
+							color: #fff;
+						}
+					}
+				}
+				.main{
+					.deleatedBlock{
+						.mainTxt{
+							color: #fff;
+						}
+						.deleteBtn{
+							background-image: url(\../img/trashWhite.svg);
+						}
+						.recoveryBtn{
+							background-image: url(\../img/trash-restoreWhite.svg);
+						}
+					}
+					.block{
+						.mainTxt{
+							color: #fff;
+						}
+						.moveBlock{
+							border-color: #5f6368;
+							background-image: url(\../img/dotWhite.svg);
+							background-color:rgba(154,160,166,0.157);
+						}
+						.checkBlock{
+							background-color: #fff;
+							background-image: url(\../img/checkBlack.svg);
+						}
+						.palette{
+							.paletteBtn{
+								background-image: url(\../img/paletteWhite.svg);
+							}
+							.items{
+								background-color: #202124;
+								.color{
+									&.active{
+										background-image: url(\../img/check.svg);
+									}
+								}
+							}
+						}
+						.deleteBtn{
+							background-image: url(\../img/trashWhite.svg);
+						}
+						.cloneBtn{
+							background-image: url(\../img/cloneWhite.svg);
+						}
+						&.addHover{
+							.moveBlock{
+								&:hover{
+									background-image: url(\../img/move-buttonWhite.svg);
+								}
+							}
+							.palette{
+								.paletteBtn{
+									&:hover{
+										background-color:rgba(154,160,166,0.157);
+									}
+								}
+							}
+							.menuBtn{
+								&:hover{
+									background-color:rgba(154,160,166,0.157);
+								}
+							}
+						}
+						&.clon{
+							.moveBlock{
+								background-image: url(\../img/move-buttonWhite.svg);
+							}
+						}
+					}
+					.title{
+						> span{
+							color: #fff;
+						}
+					}
+					.about{
+						> p{
+							color: #fff;
+						}
+						> ul{
+							> li{
+								color: #fff;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+::-webkit-scrollbar {
+	width: 12px;
+  }
+
+  ::-webkit-scrollbar {
+	width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+	background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+	background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+	background: #555;
+  }
+
+// md
+@media (max-width: 1200px) {
+	.myKeep{
+		.home{
+			.cont{
+				.main{
+					.deleatedBlock{
+						width: 48.84259259%;
+					}
+					.block{
+						width: 48.84259259%;
+					}
+				}
+			}
+		}
+	}
+}
+
+// ms
+@media (max-width: 900px) {
+	.myKeep{
+		.home{
+			.cont{
+				.main{
+					.deleatedBlock{
+						width: 100%;
+					}
+					.block{
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+
+// xs
+@media (max-width: 600px) {
+	.myKeep{
+		.topBar{
+			.wrapper{
+				.logo{
+					left: 50%;
+					transform: translate(-50%, 0);
+				}
+				.mobBtn{
+					display: inline-block;
+				}
+				.menuRouter{
+					display: none;
+				}
+			}
+		}
+		.home{
+			.cont{
+				.main{
+					.block{
+						.moveBlock{
+									height: 10px;
+									background-image: url(\../img/dot.svg);
+									background-size: 7px;
+						}
+						&.addHover{
+							.moveBlock{
+								&:hover{
+									height: 10px;
+									background-image: url(\../img/dot.svg);
+									background-size: 7px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
