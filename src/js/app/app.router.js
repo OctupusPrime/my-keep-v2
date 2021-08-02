@@ -28,7 +28,7 @@ const routes = [
 
 const router = new VueRouter({
     mode: 'history',
-    base: '/portfolio/',
+    base: '/my-keep-v2/',
     routes
 })
   
