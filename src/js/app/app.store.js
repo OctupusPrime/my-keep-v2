@@ -8,9 +8,9 @@ Vue.use(Vuex);
 // localStorage.clear();
 module.exports = new Vuex.Store({
     state:{
-        blocks: [],
-        settings: {},
-        deleteBlocks: []
+        blocks: JSON.parse(localStorage.getItem('blocks')) || [],
+        settings: JSON.parse(localStorage.getItem('settings')) || {},
+        deleteBlocks: JSON.parse(localStorage.getItem('deleteBlocks')) || []
     },
     getters:{
         getBlocks: function(state)
