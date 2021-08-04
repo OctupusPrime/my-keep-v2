@@ -44,7 +44,8 @@ This application contains of fully responsible table of notes. *Inspired by [Goo
 * #### img
     Contains off all images for app.
 * #### js
-    **app** - Содержит плагины и инициализации vue.
+    **app**   
+    Contains plugins and initializations vue.
 * #### less
     Contains off all styles for app.
 * #### vue
@@ -59,8 +60,8 @@ This application contains of fully responsible table of notes. *Inspired by [Goo
 * #### gulpfile
     Used to init app collector for hot reloads and build bunde off app.
 #### Bugs  
-Cursor not *grub* when pick note; 
-Litle flashing when note change place;
+Cursor not *grub* when pick note;   
+Litle flashing when note change place;  
 ### Authors
 [**Misha Sokil**](https://github.com/OctupusPrime)
 ### License
